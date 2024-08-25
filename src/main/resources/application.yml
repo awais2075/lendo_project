@@ -2,13 +2,14 @@ server:
   port: 8082
   servlet:
     context-path: /lendo
-spring:
-  profiles:
-#    active: dev
-logging:
-  level:
-    org.springframework.web: ERROR
-    sa.lendo: DEBUG
-  pattern:
-    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
-    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
+
+jwt:
+  secret: lendo_project
+  expiry: 900000
+
+gorest:
+  baseUrl: https://gorest.co.in
+  endpoints:
+    users: /public/v2/users
+    posts: /public/v2/posts
+    comments: /public/v2/comments
